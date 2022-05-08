@@ -88,4 +88,3 @@ step -2: In the shall executing time ,asking Do you want to continue? [Y/n] y
 After remove configuration ,re-install form first level.
 
 ### Happy Kubernetes
-
