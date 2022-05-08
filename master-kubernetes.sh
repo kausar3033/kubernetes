@@ -58,9 +58,9 @@ sudo apt-get install -y kubelet kubeadm kubectl
 
 ### Initialize Master Node 
 
-#sudo kubeadm init --ignore-preflight-errors=all
+sudo kubeadm init --ignore-preflight-errors=all
 
-sudo kubeadm init --cri-socket=/var/run/crio/crio.sock
+#sudo kubeadm init --cri-socket=/var/run/crio/crio.sock
 
 
 sudo mkdir -p $HOME/.kube
