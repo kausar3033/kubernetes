@@ -1,6 +1,7 @@
-## Welcoem to iBOS DevOps Team.
+# Welcome to iBOS Ltd.
 
 #!/bin/sh
+
 # Author : Kausar (iBOS)
 # Script follows here:
 ## Install Docker,kubeadm,kubelet,kubectl
@@ -14,24 +15,27 @@ sudo chmod 755 /tmp/installK8S.sh
 sudo bash /tmp/installK8S.sh
 
 ## Initialize kubernetes Master Node
+ 
+#sudo kubeadm init --ignore-preflight-errors=all
 
-sudo kubeadm init --ignore-preflight-errors=all
+#sudo kubeadm init --cri-socket=/var/run/crio/crio.sock
 
-sudo mkdir -p $HOME/.kube
 
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+#sudo mkdir -p $HOME/.kube
 
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
+#sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 
-## install networking driver -- Weave/flannel/canal/calico etc...
+#sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-## below installs weave networking driver
+## install networking driver -- Weave/flannel/canal/calico etc... 
 
-sudo kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+## below installs weave networking driver 
+
+#sudo kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')" 
 
 # Validate:  kubectl get nodes
 
-### INSTALL DOCKER
+### INSTALL DOCKER 
 
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
@@ -49,24 +53,25 @@ sudo service docker restart
 
 sudo echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo apt-get update ;
+sudo apt-get update ; 
 sudo apt-get install -y kubelet kubeadm kubectl
 
-### Initialize Master Node
+### Initialize Master Node 
 
 #sudo kubeadm init --ignore-preflight-errors=all
 
 sudo kubeadm init --cri-socket=/var/run/crio/crio.sock
 
+
 sudo mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-## install networking driver -- Weave/flannel/canal/calico etc...
+## install networking driver -- Weave/flannel/canal/calico etc... 
 
-## below installs weave networking driver
+## below installs weave networking driver 
 
-sudo kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+sudo kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')" 
 
 sudo apt-get update
 
