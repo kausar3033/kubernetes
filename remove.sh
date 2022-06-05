@@ -1,4 +1,4 @@
-# Welcome to iBOS Ltd.
+# Welcome to kausar3033.
 
 #!/bin/sh
 
